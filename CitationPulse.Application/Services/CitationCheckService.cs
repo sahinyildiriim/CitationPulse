@@ -111,6 +111,7 @@ public class CitationCheckService
         NameMatches = result.NameMatches,
         AddressMatches = result.AddressMatches,
         PhoneMatches = result.PhoneMatches,
-        WebsiteMatches = result.WebsiteMatches
+        WebsiteMatches = result.WebsiteMatches,
+        Notes = result.Notes
     };
 }

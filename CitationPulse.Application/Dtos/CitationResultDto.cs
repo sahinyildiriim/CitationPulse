@@ -9,4 +9,5 @@ public class CitationResultDto
     public bool? AddressMatches { get; set; }
     public bool? PhoneMatches { get; set; }
     public bool? WebsiteMatches { get; set; }
+    public string? Notes { get; set; }
 }

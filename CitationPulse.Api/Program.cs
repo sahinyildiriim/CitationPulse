@@ -27,11 +27,31 @@ builder.Services.AddHttpClient("GoogleMaps", client =>
 {
     client.BaseAddress = new Uri("https://places.googleapis.com/");
 });
+builder.Services.AddHttpClient("TomTom", client =>
+{
+    client.BaseAddress = new Uri("https://api.tomtom.com/");
+});
+builder.Services.AddHttpClient("Foursquare", client =>
+{
+    client.BaseAddress = new Uri("https://places-api.foursquare.com/");
+});
 
 builder.Services.AddScoped<ICitationProvider>(sp =>
 {
     var factory = sp.GetRequiredService<IHttpClientFactory>();
     return new OpenStreetMapProvider(factory.CreateClient("OpenStreetMap"));
+});
+builder.Services.AddScoped<ICitationProvider>(sp =>
+{
+    var factory = sp.GetRequiredService<IHttpClientFactory>();
+    var apiKey = builder.Configuration["ProviderApiKeys:TomTom"] ?? string.Empty;
+    return new TomTomProvider(factory.CreateClient("TomTom"), apiKey);
+});
+builder.Services.AddScoped<ICitationProvider>(sp =>
+{
+    var factory = sp.GetRequiredService<IHttpClientFactory>();
+    var apiKey = builder.Configuration["ProviderApiKeys:Foursquare"] ?? string.Empty;
+    return new FoursquareProvider(factory.CreateClient("Foursquare"), apiKey);
 });
 
 builder.Services.AddScoped<ICitationProvider>(sp =>
@@ -45,8 +65,7 @@ builder.Services.AddScoped<ICitationProvider, BulurumScrapingProvider>();
 
 var mockProviderNames = new[]
 {
-    "TomTom",
-    "Foursquare",
+    
     "HERE",
     "Azure Maps",
     "Apple Maps",
