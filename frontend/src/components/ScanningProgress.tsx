@@ -40,20 +40,26 @@ export function ScanningProgress({ done }: ScanningProgressProps) {
 
   return (
     <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-5 rounded-2xl border border-hairline bg-surface p-8 text-center">
-      <div className="h-10 w-10 animate-spin rounded-full border-[3px] border-[var(--series-blue)] border-t-transparent" />
-
-      <div className="flex flex-col gap-1">
-        <p className="text-sm font-medium text-primary">
-          {done ? 'Tamamlandı' : `${PROVIDERS[providerIndex]} taranıyor…`}
-        </p>
-        <p className="text-xs text-muted">10 kaynak kontrol ediliyor · {elapsedSeconds}s</p>
+      <div role="status" aria-live="polite" className="sr-only">
+        {done ? 'Tarama tamamlandı.' : 'İşletme 10 kaynakta taranıyor, lütfen bekleyin.'}
       </div>
 
-      <div className="h-2 w-full overflow-hidden rounded-full" style={{ background: 'var(--gridline)' }}>
-        <div
-          className="h-full rounded-full bg-[var(--series-blue)] transition-all duration-300 ease-out"
-          style={{ width: `${displayProgress}%` }}
-        />
+      <div aria-hidden="true" className="flex w-full flex-col items-center gap-5">
+        <div className="h-10 w-10 animate-spin rounded-full border-[3px] border-(--series-blue) border-t-transparent" />
+
+        <div className="flex flex-col gap-1">
+          <p className="text-sm font-medium text-primary">
+            {done ? 'Tamamlandı' : `${PROVIDERS[providerIndex]} taranıyor…`}
+          </p>
+          <p className="text-xs text-muted">10 kaynak kontrol ediliyor · {elapsedSeconds}s</p>
+        </div>
+
+        <div className="h-2 w-full overflow-hidden rounded-full" style={{ background: 'var(--gridline)' }}>
+          <div
+            className="h-full rounded-full bg-(--series-blue) transition-all duration-300 ease-out"
+            style={{ width: `${displayProgress}%` }}
+          />
+        </div>
       </div>
     </div>
   );

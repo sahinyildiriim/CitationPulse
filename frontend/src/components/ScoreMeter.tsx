@@ -12,8 +12,12 @@ export function ScoreMeter({ label, value, accent }: ScoreMeterProps) {
   const data = [{ value }];
 
   return (
-    <div className="flex flex-col items-center gap-2 rounded-2xl border border-hairline bg-surface p-6">
-      <div className="relative h-40 w-40">
+    <div
+      role="group"
+      aria-label={`${label}: ${Math.round(value)} / 100`}
+      className="flex flex-col items-center gap-2 rounded-2xl border border-hairline bg-surface p-6"
+    >
+      <div className="relative h-40 w-40" aria-hidden="true">
         <RadialBarChart
           width={160}
           height={160}
@@ -40,7 +44,9 @@ export function ScoreMeter({ label, value, accent }: ScoreMeterProps) {
           <span className="text-xs text-muted">/ 100</span>
         </div>
       </div>
-      <span className="text-sm font-medium text-secondary">{label}</span>
+      <span aria-hidden="true" className="text-sm font-medium text-secondary">
+        {label}
+      </span>
     </div>
   );
 }

@@ -47,14 +47,15 @@ export function StatusBadge({ status }: { status: CitationStatus }) {
 
   return (
     <span
-      className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium"
+      className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium text-primary"
       style={{
-        color: config.color,
         borderColor: `color-mix(in srgb, ${config.color} 35%, transparent)`,
         backgroundColor: `color-mix(in srgb, ${config.color} 12%, transparent)`,
       }}
     >
-      {config.icon}
+      <span style={{ color: config.color }} aria-hidden="true">
+        {config.icon}
+      </span>
       {config.label}
     </span>
   );

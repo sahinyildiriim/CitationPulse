@@ -55,7 +55,7 @@ export function ProviderCard({ result, style }: ProviderCardProps) {
               </div>
               <div className="h-1.5 w-full overflow-hidden rounded-full" style={{ background: 'var(--gridline)' }}>
                 <div
-                  className="h-full rounded-full bg-[var(--series-blue)]"
+                  className="h-full rounded-full bg-(--series-blue)"
                   style={{ width: `${result.matchScore}%` }}
                 />
               </div>

@@ -9,7 +9,9 @@ interface ResultsViewProps {
 
 export function ResultsView({ response, onReset }: ResultsViewProps) {
   return (
-    <div className="flex w-full max-w-5xl flex-col gap-8">
+    <div className="flex w-full max-w-6xl flex-col gap-8">
+      <h2 className="sr-only">Tarama sonuçları</h2>
+
       <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-10">
         <ScoreMeter label="Kapsama Skoru (Coverage)" value={response.coverageScore} accent="blue" />
         <ScoreMeter label="Tutarlılık Skoru (Consistency)" value={response.consistencyScore} accent="orange" />
@@ -24,7 +26,7 @@ export function ResultsView({ response, onReset }: ResultsViewProps) {
       <button
         type="button"
         onClick={onReset}
-        className="mx-auto rounded-lg border border-hairline px-4 py-2 text-sm font-medium text-secondary transition-colors hover:text-primary"
+        className="focus-ring mx-auto rounded-lg border border-hairline px-4 py-2 text-sm font-medium text-secondary transition-colors hover:text-primary"
       >
         Yeni bir tarama başlat
       </button>
