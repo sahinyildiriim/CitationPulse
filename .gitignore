@@ -365,3 +365,19 @@ FodyWeavers.xsd
 *.db
 *.db-shm
 *.db-wal
+
+###############################################################################
+# Node.js / React (frontend)
+###############################################################################
+node_modules/
+dist/
+dist-ssr/
+.env
+.env.local
+.env.*.local
+*.local
+.eslintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
