@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CitationPulse.Application\CitationPulse.Application.csproj" />
+    <ProjectReference Include="..\CitationPulse.Domain\CitationPulse.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
