@@ -7,6 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AngleSharp" Version="1.5.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.20">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.20" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="8.0.20" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CitationPulse.Application\CitationPulse.Application.csproj" />
     <ProjectReference Include="..\CitationPulse.Domain\CitationPulse.Domain.csproj" />
   </ItemGroup>
