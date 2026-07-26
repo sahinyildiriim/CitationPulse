@@ -1,14 +1,6 @@
 import type { BusinessLiveFields } from './BusinessForm';
 import { GlobeIcon } from './icons';
 
-const PulseIcon = (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4 text-white/80" aria-hidden="true">
-    <circle cx="12" cy="12" r="3" fill="currentColor" stroke="none" />
-    <circle cx="12" cy="12" r="7" opacity="0.55" />
-    <circle cx="12" cy="12" r="10.5" opacity="0.25" />
-  </svg>
-);
-
 export function BusinessCardPreview({ businessName, address, phoneNumber, website }: BusinessLiveFields) {
   return (
     <div
@@ -25,7 +17,9 @@ export function BusinessCardPreview({ businessName, address, phoneNumber, websit
       <div className="relative z-10 flex flex-col gap-7">
         <div className="flex items-center justify-between">
           <span className="text-xs font-semibold uppercase tracking-wider text-white/55">CitationPulse</span>
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10">{PulseIcon}</span>
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 p-1">
+            <img src="/logo-mark.png" alt="" className="h-full w-full object-contain" />
+          </span>
         </div>
 
         <p

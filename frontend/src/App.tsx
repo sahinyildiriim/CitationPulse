@@ -57,12 +57,7 @@ function App() {
       <header className="sticky top-0 z-20 border-b border-hairline bg-page/80 backdrop-blur-md">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
           <div className="flex items-center gap-2.5">
-            <span
-              aria-hidden="true"
-              className="flex h-8 w-8 items-center justify-center rounded-lg bg-(--series-blue) text-sm font-bold text-white"
-            >
-              C
-            </span>
+            <img src="/logo-mark.png" alt="" aria-hidden="true" className="h-8 w-8" />
             <div className="flex flex-col">
               <h1 className="text-base font-semibold leading-tight text-primary">CitationPulse</h1>
               <span className="text-xs leading-tight text-muted">Yerel citation tutarlılık denetimi</span>
